@@ -22,7 +22,7 @@ def gedcom2gephi(gedcomFilename = 'gedcom.ged', gephiFilename = None):
         if p.mother:
             dg.add_edge(getId(p.mother), getId(p))
     if gephiFilename is None:
-        gephiFilename = os.path.splitext(gedcomFilename)[0]+'.gexf'
+        gephiFilename = os.path.splitext(gedcomFilename)[0] + '.gexf'
     nx.write_gexf(dg, gephiFilename)
 
 if __name__ == '__main__':
@@ -30,8 +30,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description = 'This script converts a gedcom file to a gexf file')
     parser.add_argument('-g','--gedcom', type = str, default = 'my_gedcom_file.ged',
-                       help = 'gedcom filename')
+                       help = 'Gedcom filename')
     parser.add_argument('-o','--outputGexf', type = str, default = None,
-                       help='')
+                       help='Optional output name. If not provided, a filename will be generated from the gedcom filename')
     args = parser.parse_args()
-    gedcom2gephi(gedcomFilename = args.gedcom, gephiFilename =args.outputGephi)
+    gedcom2gephi(gedcomFilename = args.gedcom, gephiFilename = args.outputGephi)
