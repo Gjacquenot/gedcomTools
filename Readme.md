@@ -1,4 +1,8 @@
-# gedcom2gexf
+# gedcomTools
+
+`gedcomTools` contains a set of scripts to manipulate `gedcom` files.
+
+## gedcom2gexf
 
 `gedcom2gexf` allows to import genealogical data stored in
 in [Gephi](https://gephi.org),
