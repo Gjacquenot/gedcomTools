@@ -22,20 +22,17 @@ def addLatLon(gedcomFilename, outputFilename = None):
     def loadCitiesLatLon(filename = cacheLatLonFilename):
         if not os.path.exists(filename): return {}
         lines = [c.strip() for c in open(filename,'r', encoding='utf-8').readlines()]
+        data=[lines[i-1] + ':' + lines[i][1:-1] for i in range(len(lines)) if lines[i].startswith('(')]
         d={}
-        data=[]
-        for i in range(len(lines)):
-            if lines[i].startswith('('):
-                data.append(lines[i-1] + ':' + lines[i][1:-1])
         for line in data:
             city, latlon = line.split(':')
             lat,lon = latlon.split(',')
             key = city.strip()
-            d[key]=(float(lat),float(lon))
+            d[key] = (float(lat),float(lon))
         return d
 
     def saveCitiesLatLon(citiesLatLon, filename = cacheLatLonFilename):
-        f=open(filename,'w')
+        f = open(filename,'w')
         for city in sorted(citiesLatLon.keys()):
             f.write(city+'\n')
             f.write('('+str(citiesLatLon[city][0])+','+str(citiesLatLon[city][1])+')\n')
