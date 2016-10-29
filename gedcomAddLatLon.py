@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# This script geopy to find the latitude and longitude
-# of locations.
+# This script reads a gedcom file and adds latitude
+# and longitude to all places without these informations.
+# The result is written in a new gedcom file.
+#
+# This script uses geopy to find the latitude and longitude
+# of locations. You may have to install it with
+# pip install geopy
 #
 # Since we can not perform too much requests, this script
 # stores the result of the requests in a text file.
