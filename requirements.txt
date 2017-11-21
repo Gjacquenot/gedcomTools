@@ -1,2 +1,2 @@
-gedcom
+python-gedcom
 networkx
