@@ -6,7 +6,7 @@ import gedcom
 import networkx as nx
 import os
 
-def gedcom2gephi(gedcomFilename = 'gedcom.ged', gephiFilename = None):
+def gedcom2gephi(gedcomFilename='gedcom.ged', gephiFilename=None):
     getName = lambda n: n.name[0]+' '+n.name[1]
     getId = lambda n: n.id[1:-1]
     getFamilyName = lambda n: n.name[1]
@@ -29,9 +29,10 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(
         description = 'This script converts a gedcom file to a gexf file')
-    parser.add_argument('-g','--gedcom', type = str, default = 'my_gedcom_file.ged',
-                       help = 'Gedcom filename')
-    parser.add_argument('-o','--outputGexf', type = str, default = None,
-                       help='Optional output name. If not provided, a filename will be generated from the gedcom filename')
+    pa = parser.add_argument
+    pa('-g','--gedcom', type = str, default = 'my_gedcom_file.ged',
+       help = 'Gedcom filename')
+    pa('-o','--outputGexf', type = str, default = None,
+       help='Optional output name. If not provided, a filename will be generated from the gedcom filename')
     args = parser.parse_args()
-    gedcom2gephi(gedcomFilename = args.gedcom, gephiFilename = args.outputGephi)
+    gedcom2gephi(gedcomFilename=args.gedcom, gephiFilename=args.outputGexf)
