@@ -15,7 +15,7 @@ def gedcom2gephi(gedcomFilename='gedcom.ged', gephiFilename=None):
     dg = nx.DiGraph()
     for p in g.individuals:
         if p.id not in dg:
-            dg.add_node(getId(p), {'label':getName(p), 'name':getName(p), 'familyName':getFamilyName(p)})
+            dg.add_node(getId(p), label=getName(p), name=getName(p), familyName=getFamilyName(p))
     for p in g.individuals:
         if p.father:
             dg.add_edge(getId(p.father), getId(p))
