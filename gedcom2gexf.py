@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Works with Python2 and Python3
+#
+# It requires:
+#
+# - networkx package for graph handling
+# - gedcompy package to parse gedcom file
+#
+# python -m pip install networkx
+# python -m pip install gedcompy
+#
+# Be careful, this package may collide with python-gedcom.
 
 import gedcom
 import networkx as nx
