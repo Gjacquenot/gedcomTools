@@ -3,6 +3,13 @@
 `gedcomTools` contains a set of scripts to manipulate `gedcom`
 files.
 
+Dependencies, defined in file `requirements.txt` can be installed with `pip` with the following command:
+
+```
+python -m pip install -r requirements.txt
+```
+
+
 ## gedcom2gexf
 
 `gedcom2gexf` allows to import genealogical data stored
